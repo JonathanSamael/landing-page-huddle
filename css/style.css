@@ -11,8 +11,10 @@ html {
     padding: 4rem;
 }
 
+/* MAIN */
+
 .container {
-    padding: 4rem 6rem 0 6rem;
+    padding: 3rem 6rem 0 6rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 45px;
@@ -77,11 +79,53 @@ html {
     transition: ease-in-out 200ms;
 }
 
+.social-menu .fa-instagram {
+    padding-left: .1rem;
+    padding-right: .1rem;
+}
+
 .attribution { 
     font-size: 11px;
     text-align: center;
+    bottom: 0;
 }
 
 .attribution a { 
     color: hsl(228, 65%, 80%);
+}
+
+@media(max-width:1250px) {
+
+    .image img{
+        width: 100%;
+    }
+
+    .container .title {
+        font-size: 3.8rem;
+    }
+}
+
+@media(max-width: 970px) {
+
+    .container {
+        display: block;
+    }
+
+    .container .all-text {
+        text-align: center;
+    }
+
+    .container .big-btn {
+        margin-bottom: 30px;
+    }
+
+    .social-menu ul {
+        margin-bottom: 20px;
+        justify-content: center;
+       margin-right: 0;
+    }
+
+    .social-menu ul li {
+        margin: 0 15px;
+    }
 }
