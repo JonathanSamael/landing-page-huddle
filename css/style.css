@@ -1,8 +1,8 @@
 html {
-    background: var(--bg-main) url(../images/bg-desktop.svg) no-repeat;
+    background: var(--bg-main) url(../images/bg-desktop.svg) no-repeat center;
+    background-size: cover;
     font-size: 62.5%;
     color: #f1f1f1;
-    max-width: var(--max-width-size);
 }
 
 /* HEADER */
@@ -14,29 +14,34 @@ html {
 /* MAIN */
 
 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 3rem 6rem 0 6rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 45px;
+    height: 75vh;
+    width: 100%;
+}
+
+.container .all-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    width: 560px;
 }
 
 .container .title {
     font-family: 'Poppins', sans-serif;
     font-size: 4.3rem;
     font-weight: 600;
-    margin-top: 4rem;
+    margin-bottom: 2rem;
 }
 
 .container .text-description {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 1.95rem;
-    margin-top: 2rem;
+    margin-bottom: 2rem;
     line-height: 30px;
-}
-
-.container .big-btn {
-    padding-top: 2rem;
 }
 
 .container .big-btn button {
@@ -45,8 +50,9 @@ html {
     color: var(--bg-main);
     padding: 1.2rem 5rem;
     border-radius: 25px;
-    box-shadow: 2px 2px 10px 1px #0c0c0c;
+    box-shadow: 1px 1px 16px #414141;
     cursor: pointer;
+    margin-bottom: 70px;
 }
 
 
@@ -58,45 +64,54 @@ html {
 
 /* FOOTER */
 
+footer {
+    margin-top: 20px;
+}
+
 .social-menu ul{
     display: flex;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     justify-content: end;
     margin-right: 4rem;
 }
 
-.social-menu ul li {
+.social-menu ul li a{
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: .9rem;
+    align-content: center;
     border: 1px solid;
     border-radius: 50%;
     margin-right: 15px;
+    height: 35px;
+    width: 35px;
 }
 
-.social-menu ul li:hover {
+.social-menu ul li a {
+    color: #f1f1f1;
+}
+
+.social-menu ul li a:hover {
     color: var(--active-hover);
     transition: ease-in-out 200ms;
 }
 
-.social-menu .fa-instagram {
-    padding-left: .1rem;
-    padding-right: .1rem;
-}
-
-.attribution { 
+p.attribution { 
     font-size: 11px;
     text-align: center;
-    bottom: 0;
 }
 
 .attribution a { 
     color: hsl(228, 65%, 80%);
 }
 
-@media(max-width:1250px) {
+@media(max-width:1024px) {
 
     .image img{
+        width: 100%;
+    }
+
+    .container .all-text {
         width: 100%;
     }
 
@@ -110,13 +125,23 @@ html {
 }
 
 @media(max-width: 970px) {
+    html {
+        background: var(--bg-main) url(../images/bg-mobile.svg) no-repeat;
+        background-size: 100%;
+    }
 
     .header {
         padding-bottom: 0;
+        height: auto;
+    }
+
+    .header .logo {
+        margin-bottom: 4rem;
     }
 
     .container {
         display: block;
+        height: auto;
     }
 
     .image {
@@ -130,6 +155,7 @@ html {
     
     .container .all-text {
         text-align: center;
+        margin: 0;
     }
 
     .all-text .title {
@@ -138,6 +164,10 @@ html {
 
     .all-text .text-description {
         font-size: 1.6rem;
+    }
+
+    .all-text .big-btn {
+        margin-bottom: 0;
     }
 
     .social-menu ul {
@@ -149,16 +179,25 @@ html {
     .social-menu ul li {
         margin: 0 15px;
     }
+
+    footer {
+        margin: 0;
+    }
 }
 
 @media(max-width: 475px) {
-    html {
-        background: var(--bg-main) url(../images/bg-mobile.svg) no-repeat;
-        background-size: 100%;
+
+    .header .logo {
+        width: 50%;
     }
 
     .image img {
         width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .container .all-text {
+        margin: 0;
     }
 
     .all-text .title {
@@ -167,5 +206,9 @@ html {
 
     .all-text .text-description {
         font-size: 1.5rem
+    }
+
+    .container .big-btn {
+        margin: 0;
     }
 }
